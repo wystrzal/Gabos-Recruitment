@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Gabos_Recruitment.Module.BusinessObjects.CheckSubject">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="BankAccount" DataSourceProperty="Number" LookupProperty="Number" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views Id="Views">
+    <DetailView Id="CheckSubject_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="BankAccount" LookupProperty="Number" View="" LookupEditorMode="AllItems" />
+      </Items>
+    </DetailView>
+  </Views>
+</Application>

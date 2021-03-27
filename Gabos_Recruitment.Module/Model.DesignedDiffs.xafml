@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Gabos Recruitment">
+  <ActionDesign>
+    <Actions>
+      <Action Id="New" ValidationContexts="Save" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="DevExpress.ExpressApp.NonPersistentBaseObject" ImageName="" />
+    <Class Name="Gabos_Recruitment.Module.BusinessObjects.SearchSubject">
+      <OwnMembers>
+        <Member Name="BankAccounts" LookupProperty="Number" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="AccountNumber_ListView" Removed="True" />
+          <Item Id="ApiException_ListView" Removed="True" />
+          <Item Id="BankAccount_ListView" Removed="True" />
+          <Item Id="BaseNonPersistentObject_ListView" Removed="True" />
+          <Item Id="BaseSpecification_ListView" Removed="True" />
+          <Item Id="CheckSubject_ListView" ViewId="CheckSubject_DetailView" />
+          <Item Id="Entity_ListView" Removed="True" />
+          <Item Id="EntityCheck_ListView" Removed="True" />
+          <Item Id="EntityCheckResponse_ListView" Removed="True" />
+          <Item Id="EntityItem_ListView" Removed="True" />
+          <Item Id="EntityList_ListView" Removed="True" />
+          <Item Id="EntityListResponse_ListView" Removed="True" />
+          <Item Id="EntityPerson_ListView" Removed="True" />
+          <Item Id="EntityResponse_ListView" Removed="True" />
+          <Item Id="Entry_ListView" Removed="True" />
+          <Item Id="EntryList_ListView" Removed="True" />
+          <Item Id="EntryListResponse_ListView" Removed="True" />
+          <Item Id="Nip_ListView" Removed="True" />
+          <Item Id="Regon_ListView" Removed="True" />
+          <Item Id="SearchSubject_ListView" ViewId="SearchSubject_DetailView" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="20.2.6.0" IsNewNode="True" />
+  </SchemaModules>
+  <Validation>
+    <ErrorMessageTemplates>
+      <RuleCriteria MessageTemplateMustSatisfyCriteria="The object must satisfy the following criteria: &quot;{Criteria}&quot;." />
+    </ErrorMessageTemplates>
+    <Rules>
+      <RuleCriteria Id="BankAccountLength" MessageTemplateMustSatisfyCriteria="The object must satisfy the following criteria: &quot;{Criteria}&quot;." />
+    </Rules>
+  </Validation>
+  <Views>
+    <DetailView Id="AccountNumber_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False" />
+    <DetailView Id="ApiException_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <HiddenActions>
+        <ActionLink ActionId="Close" IsNewNode="True" />
+        <ActionLink ActionId="Refresh" IsNewNode="True" />
+        <ActionLink ActionId="Save" IsNewNode="True" />
+      </HiddenActions>
+    </DetailView>
+    <ListView Id="ApiException_ListView" AllowDelete="False" AllowNew="False" />
+    <ListView Id="ApiException_LookupListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <ListView Id="CheckSubject_BankAccount_ListView">
+      <HiddenActions>
+        <ActionLink ActionId="FullTextSearch" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="CheckSubject_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="Close" IsNewNode="True" />
+        <ActionLink ActionId="Delete" IsNewNode="True" />
+        <ActionLink ActionId="FullTextSearch" IsNewNode="True" />
+        <ActionLink ActionId="New" IsNewNode="True" />
+        <ActionLink ActionId="Refresh" IsNewNode="True" />
+        <ActionLink ActionId="Save" IsNewNode="True" />
+        <ActionLink ActionId="SearchAction" IsNewNode="True" />
+      </HiddenActions>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="21.066666666666666">
+            <LayoutGroup Id="CheckSubject" RelativeSize="100" Caption="Date">
+              <LayoutItem Id="Date" RelativeSize="20.253164556962027" />
+              <LayoutGroup Id="BankAccount" ShowCaption="True" Caption="Bank Account" Index="1" RelativeSize="79.74683544303798" IsNewNode="True">
+                <LayoutItem Id="BankAccount" ViewItem="BankAccount" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Regon" ShowCaption="True" Index="1" RelativeSize="16.266666666666666" IsNewNode="True">
+            <LayoutItem Id="Regon" ShowCaption="False" ViewItem="Regon" Index="0" RelativeSize="100" IsNewNode="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="Nip" ShowCaption="True" Index="2" RelativeSize="16.4" IsNewNode="True">
+            <LayoutItem Id="Nip" ShowCaption="False" ViewItem="Nip" Index="0" RelativeSize="100" IsNewNode="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Index="3" RelativeSize="46.266666666666666">
+            <LayoutGroup Id="Regon" Index="1" RelativeSize="100" Removed="True">
+              <LayoutItem Id="Regon" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="BankAccount" RelativeSize="100" Removed="True">
+              <LayoutItem Id="BankAccount" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Nip" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="CheckSubject_Nip_ListView">
+      <HiddenActions>
+        <ActionLink ActionId="FullTextSearch" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="CheckSubject_Regon_ListView">
+      <HiddenActions>
+        <ActionLink ActionId="FullTextSearch" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="Entity_AuthorizedClerks_ListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <DetailView Id="Entity_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="32.93333333333333">
+            <LayoutGroup Id="Entity" RelativeSize="100">
+              <LayoutGroup Id="Entity_col1" RelativeSize="50">
+                <LayoutItem Id="Name" RelativeSize="15.384615384615385" />
+                <LayoutItem Id="Nip" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="StatusVat" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="Regon" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="Pesel" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="Krs" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="ResidenceAddress" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="WorkingAddress" RelativeSize="15.384615384615385" />
+              </LayoutGroup>
+              <LayoutGroup Id="Entity_col2" RelativeSize="50">
+                <LayoutItem Id="RegistrationLegalDate" RelativeSize="15.384615384615385" />
+                <LayoutItem Id="RegistrationDenialDate" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="RegistrationDenialBasis" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="RestorationDate" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="RestorationBasis" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="RemovalDate" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="RemovalBasis" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="HasVirtualAccounts" RelativeSize="15.384615384615385" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="67.06666666666666">
+            <LayoutGroup Id="Representatives" RelativeSize="100">
+              <LayoutItem Id="Representatives" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuthorizedClerks" RelativeSize="100">
+              <LayoutItem Id="AuthorizedClerks" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Partners" RelativeSize="100">
+              <LayoutItem Id="Partners" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="BankAccountNumbers" Index="3" RelativeSize="100">
+              <LayoutItem Id="BankAccountNumbers" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AccountNumbers" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Entity_Partners_ListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <ListView Id="Entity_Representatives_ListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <DetailView Id="EntityCheck_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False" />
+    <DetailView Id="EntityCheckResponse_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <HiddenActions>
+        <ActionLink ActionId="Close" IsNewNode="True" />
+        <ActionLink ActionId="Refresh" IsNewNode="True" />
+        <ActionLink ActionId="Save" IsNewNode="True" />
+      </HiddenActions>
+    </DetailView>
+    <ListView Id="EntityCheckResponse_ListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <ListView Id="EntityCheckResponse_LookupListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <DetailView Id="EntityItem_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False" />
+    <DetailView Id="EntityList_DetailView" AllowDelete="False" AllowNew="False" AllowEdit="False" />
+    <ListView Id="EntityList_Subjects_ListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <DetailView Id="EntityListResponse_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <HiddenActions>
+        <ActionLink ActionId="Close" IsNewNode="True" />
+        <ActionLink ActionId="Refresh" IsNewNode="True" />
+        <ActionLink ActionId="Save" IsNewNode="True" />
+      </HiddenActions>
+    </DetailView>
+    <ListView Id="EntityListResponse_ListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <ListView Id="EntityListResponse_LookupListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <DetailView Id="EntityPerson_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False" />
+    <DetailView Id="EntityResponse_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <HiddenActions>
+        <ActionLink ActionId="Close" IsNewNode="True" />
+        <ActionLink ActionId="Refresh" IsNewNode="True" />
+        <ActionLink ActionId="Save" IsNewNode="True" />
+      </HiddenActions>
+      <Items>
+        <PropertyEditor Id="Result.Subject" View="Entity_DetailView" />
+        <PropertyEditor Id="Result.Subject.AuthorizedClerks" PropertyName="Result.Subject.AuthorizedClerks" View="Entity_AuthorizedClerks_ListView" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.BankAccountNumbers" PropertyName="Result.Subject.BankAccountNumbers" View="Entity_BankAccountNumbers_ListView" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.HasVirtualAccounts" PropertyName="Result.Subject.HasVirtualAccounts" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.Krs" PropertyName="Result.Subject.Krs" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.Name" PropertyName="Result.Subject.Name" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.Nip" PropertyName="Result.Subject.Nip" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.Partners" PropertyName="Result.Subject.Partners" View="Entity_Partners_ListView" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.Pesel" PropertyName="Result.Subject.Pesel" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.RegistrationDenialBasis" PropertyName="Result.Subject.RegistrationDenialBasis" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.RegistrationDenialDate" PropertyName="Result.Subject.RegistrationDenialDate" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.RegistrationLegalDate" PropertyName="Result.Subject.RegistrationLegalDate" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.Regon" PropertyName="Result.Subject.Regon" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.RemovalBasis" PropertyName="Result.Subject.RemovalBasis" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.RemovalDate" PropertyName="Result.Subject.RemovalDate" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.Representatives" PropertyName="Result.Subject.Representatives" View="Entity_Representatives_ListView" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.ResidenceAddress" PropertyName="Result.Subject.ResidenceAddress" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.RestorationBasis" PropertyName="Result.Subject.RestorationBasis" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.RestorationDate" PropertyName="Result.Subject.RestorationDate" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.StatusVat" PropertyName="Result.Subject.StatusVat" IsNewNode="True" />
+        <PropertyEditor Id="Result.Subject.WorkingAddress" PropertyName="Result.Subject.WorkingAddress" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100" Direction="Vertical">
+            <LayoutGroup Id="EntityResponse" RelativeSize="100">
+              <LayoutItem Id="Result.RequestDateTime" RelativeSize="4.266666666666667" Index="0" />
+              <LayoutItem Id="Result.RequestId" RelativeSize="3.2" Index="1" />
+              <LayoutGroup Id="Subject" ShowCaption="True" CaptionLocation="Top" Index="2" RelativeSize="92.53333333333333" Caption="Subject" Direction="Vertical" IsNewNode="True">
+                <LayoutGroup Id="Auto33c0f01b-878e-402b-b5e1-15c7ddf8d6ff" ShowCaption="False" Caption="Auto33c0f01b-878e-402b-b5e1-15c7ddf8d6ff(8)" Direction="Horizontal" Index="0" RelativeSize="5.295007564296521" IsNewNode="True">
+                  <LayoutItem Id="Result.Subject.Name" ViewItem="Result.Subject.Name" Index="0" RelativeSize="49.72527472527472" IsNewNode="True" />
+                  <LayoutItem Id="Result.Subject.RegistrationLegalDate" ViewItem="Result.Subject.RegistrationLegalDate" Index="1" RelativeSize="50.27472527472528" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Autofbde2bc4-51dd-4e58-8b40-5d3d64ad2999" ShowCaption="False" Caption="Autofbde2bc4-51dd-4e58-8b40-5d3d64ad2999(11)" Index="1" RelativeSize="34.94704992435703" IsNewNode="True">
+                  <LayoutGroup Id="Auto7e279638-5bad-4a88-a4d2-630b5e4b08b6" ShowCaption="False" Caption="Auto7e279638-5bad-4a88-a4d2-630b5e4b08b6(12)" Direction="Horizontal" Index="0" RelativeSize="14.285714285714286" IsNewNode="True">
+                    <LayoutItem Id="Result.Subject.Nip" ViewItem="Result.Subject.Nip" Index="0" RelativeSize="49.72527472527472" IsNewNode="True" />
+                    <LayoutItem Id="Result.Subject.RegistrationDenialDate" ViewItem="Result.Subject.RegistrationDenialDate" Index="1" RelativeSize="50.27472527472528" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Auto79168884-a3a6-44b7-b834-ddba419e2018" ShowCaption="False" Caption="Auto79168884-a3a6-44b7-b834-ddba419e2018(15)" Index="1" RelativeSize="85.71428571428571" IsNewNode="True">
+                    <LayoutGroup Id="Autoef29c322-b899-4bf2-bdf4-ead433c21c12" ShowCaption="False" Caption="Autoef29c322-b899-4bf2-bdf4-ead433c21c12(16)" Direction="Horizontal" Index="0" RelativeSize="16.666666666666668" IsNewNode="True">
+                      <LayoutItem Id="Result.Subject.StatusVat" ViewItem="Result.Subject.StatusVat" Index="0" RelativeSize="49.72527472527472" IsNewNode="True" />
+                      <LayoutItem Id="Result.Subject.RegistrationDenialBasis" ViewItem="Result.Subject.RegistrationDenialBasis" Index="1" RelativeSize="50.27472527472528" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Auto0720c6d3-bf80-4435-9576-20f68150f421" ShowCaption="False" Caption="Auto0720c6d3-bf80-4435-9576-20f68150f421(19)" Index="1" RelativeSize="83.33333333333333" IsNewNode="True">
+                      <LayoutGroup Id="Auto163b4be6-baa9-43cc-9843-1e7cfcb7267a" ShowCaption="False" Caption="Auto163b4be6-baa9-43cc-9843-1e7cfcb7267a(20)" Direction="Horizontal" Index="0" RelativeSize="20" IsNewNode="True">
+                        <LayoutItem Id="Result.Subject.Regon" ViewItem="Result.Subject.Regon" Index="0" RelativeSize="49.72527472527472" IsNewNode="True" />
+                        <LayoutItem Id="Result.Subject.RestorationDate" ViewItem="Result.Subject.RestorationDate" Index="1" RelativeSize="50.27472527472528" IsNewNode="True" />
+                      </LayoutGroup>
+                      <LayoutGroup Id="Auto354b8b47-fcb0-4a6e-be1e-8531ea75e775" ShowCaption="False" Caption="Auto354b8b47-fcb0-4a6e-be1e-8531ea75e775(23)" Index="1" RelativeSize="80" IsNewNode="True">
+                        <LayoutGroup Id="Auto683105de-a372-41c5-8446-e1f852fe7892" ShowCaption="False" Caption="Auto683105de-a372-41c5-8446-e1f852fe7892(24)" Direction="Horizontal" Index="0" RelativeSize="25" IsNewNode="True">
+                          <LayoutItem Id="Result.Subject.Pesel" ViewItem="Result.Subject.Pesel" Index="0" RelativeSize="49.72527472527472" IsNewNode="True" />
+                          <LayoutItem Id="Result.Subject.RestorationBasis" ViewItem="Result.Subject.RestorationBasis" Index="1" RelativeSize="50.27472527472528" IsNewNode="True" />
+                        </LayoutGroup>
+                        <LayoutGroup Id="Auto582193d2-08f7-4a2a-bb1a-a2bb037a94cf" ShowCaption="False" Caption="Auto582193d2-08f7-4a2a-bb1a-a2bb037a94cf(27)" Index="1" RelativeSize="75" IsNewNode="True">
+                          <LayoutGroup Id="Auto6b17a6fc-817d-41cd-bb15-6d1b72c2f54a" ShowCaption="False" Caption="Auto6b17a6fc-817d-41cd-bb15-6d1b72c2f54a(28)" Direction="Horizontal" Index="0" RelativeSize="33.333333333333336" IsNewNode="True">
+                            <LayoutItem Id="Result.Subject.Krs" ViewItem="Result.Subject.Krs" Index="0" RelativeSize="49.72527472527472" IsNewNode="True" />
+                            <LayoutItem Id="Result.Subject.RemovalDate" ViewItem="Result.Subject.RemovalDate" Index="1" RelativeSize="50.27472527472528" IsNewNode="True" />
+                          </LayoutGroup>
+                          <LayoutGroup Id="Auto4c88e9f1-fdc9-4bd0-aa0c-caf328a666a5" ShowCaption="False" Caption="Auto4c88e9f1-fdc9-4bd0-aa0c-caf328a666a5(31)" Index="1" RelativeSize="66.66666666666667" IsNewNode="True">
+                            <LayoutGroup Id="Autof4663a6e-95e5-4f8a-a4b1-9ac53ba82018" ShowCaption="False" Caption="Autof4663a6e-95e5-4f8a-a4b1-9ac53ba82018(32)" Direction="Horizontal" Index="0" RelativeSize="50" IsNewNode="True">
+                              <LayoutItem Id="Result.Subject.ResidenceAddress" ViewItem="Result.Subject.ResidenceAddress" Index="0" RelativeSize="49.72527472527472" IsNewNode="True" />
+                              <LayoutItem Id="Result.Subject.RemovalBasis" ViewItem="Result.Subject.RemovalBasis" Index="1" RelativeSize="50.27472527472528" IsNewNode="True" />
+                            </LayoutGroup>
+                            <LayoutGroup Id="Auto7a012aff-10b9-44d8-9d74-8f64e81d540f" ShowCaption="False" Caption="Auto7a012aff-10b9-44d8-9d74-8f64e81d540f(35)" Direction="Horizontal" Index="1" RelativeSize="50" IsNewNode="True">
+                              <LayoutItem Id="Result.Subject.WorkingAddress" ViewItem="Result.Subject.WorkingAddress" Index="0" RelativeSize="49.72527472527472" IsNewNode="True" />
+                              <LayoutItem Id="Result.Subject.HasVirtualAccounts" ViewItem="Result.Subject.HasVirtualAccounts" Index="1" RelativeSize="50.27472527472528" IsNewNode="True" />
+                            </LayoutGroup>
+                          </LayoutGroup>
+                        </LayoutGroup>
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+                <TabbedGroup Id="Item2" CaptionLocation="Top" Index="2" RelativeSize="59.75794251134644" IsNewNode="True">
+                  <LayoutGroup Id="Item4" ShowCaption="True" Caption="Representatives" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="Result.Subject.Representatives" ViewItem="Result.Subject.Representatives" Index="0" RelativeSize="100" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item3" ShowCaption="True" Caption="AuthorizedClerks" CaptionLocation="Top" Index="1" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="Result.Subject.AuthorizedClerks" ViewItem="Result.Subject.AuthorizedClerks" Index="0" RelativeSize="100" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item5" ShowCaption="True" Caption="Partners" CaptionLocation="Top" Index="2" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="Result.Subject.Partners" ViewItem="Result.Subject.Partners" Index="0" RelativeSize="100" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item1" ShowCaption="True" Caption="BankAccountNumbers" CaptionLocation="Top" Index="3" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="Result.Subject.BankAccountNumbers" ViewItem="Result.Subject.BankAccountNumbers" Index="0" RelativeSize="100" IsNewNode="True" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutItem Id="Result.Subject" RelativeSize="4.976671850699844" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="EntityResponse_ListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <ListView Id="EntityResponse_LookupListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <DetailView Id="Entry_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Items>
+        <PropertyEditor Id="Error" LookupProperty="Message" />
+      </Items>
+    </DetailView>
+    <ListView Id="Entry_ListView">
+      <Columns>
+        <ColumnInfo Id="Error" Index="-1" Removed="True" />
+        <ColumnInfo Id="Identifier" SortIndex="0" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <ListView Id="Entry_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Error" Removed="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="Entry_Subjects_ListView" AllowDelete="False" AllowNew="False" AllowLink="False" />
+    <DetailView Id="EntryList_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False" />
+    <ListView Id="EntryList_Entries_ListView" AllowDelete="False" AllowLink="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="Error" Removed="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="EntryListResponse_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <HiddenActions>
+        <ActionLink ActionId="Close" IsNewNode="True" />
+        <ActionLink ActionId="Refresh" IsNewNode="True" />
+        <ActionLink ActionId="Save" IsNewNode="True" />
+      </HiddenActions>
+    </DetailView>
+    <ListView Id="EntryListResponse_ListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <ListView Id="EntryListResponse_LookupListView" AllowLink="False" AllowNew="False" AllowDelete="False" />
+    <ListView Id="RuleSetValidationResultItem_ByTarget_ListView">
+      <Columns>
+        <ColumnInfo Id="TargetCaption" Removed="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="SearchSubject_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="Close" IsNewNode="True" />
+        <ActionLink ActionId="Delete" IsNewNode="True" />
+        <ActionLink ActionId="New" IsNewNode="True" />
+        <ActionLink ActionId="Refresh" IsNewNode="True" />
+        <ActionLink ActionId="Save" IsNewNode="True" />
+        <ActionLink ActionId="SearchAction" IsNewNode="True" />
+      </HiddenActions>
+    </DetailView>
+  </Views>
+</Application>
