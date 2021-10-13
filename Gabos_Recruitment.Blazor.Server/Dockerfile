@@ -7,6 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
+COPY /NuGet.config .
 COPY ["Gabos_Recruitment.Blazor.Server/Gabos_Recruitment.Blazor.Server.csproj", "Gabos_Recruitment.Blazor.Server/"]
 COPY ["Gabos_Recruitment.Module/Gabos_Recruitment.Module.csproj", "Gabos_Recruitment.Module/"]
 COPY ["Gabos_Recruitment.Module.Blazor/Gabos_Recruitment.Module.Blazor.csproj", "Gabos_Recruitment.Module.Blazor/"]

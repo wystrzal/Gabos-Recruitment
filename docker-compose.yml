@@ -5,7 +5,7 @@ networks:
 
 services:
   gabos_recruitment.blazor.server:
-    image: ${DOCKER_REGISTRY-}gabosrecruitmentblazorserver
+    image: gabosrecruitmentblazorserver
     build:
       context: .
       dockerfile: Gabos_Recruitment.Blazor.Server/Dockerfile
@@ -13,6 +13,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Production 
     ports:
       - "5100:80"
+      - "5100:443"
     networks:
       - server
     depends_on:
@@ -20,12 +21,12 @@ services:
 
 
   mssqlserver:
-    image: "microsoft/mssql-server-linux:2017-latest"
+    image: "mcr.microsoft.com/mssql/server:latest"
     container_name: mssqlserver
     ports:
-      - "1410:1433" 
+      - "1433:1433" 
     networks:
       - server
     environment:
-      - SA_PASSWORD=P@ssword
-      - ACCEPT_EULA="Y"
+      - SA_PASSWORD=Your_password123
+      - ACCEPT_EULA=Y
